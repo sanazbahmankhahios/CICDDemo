@@ -1,0 +1,15 @@
+{
+  "originHash" : "3d35a4110daf2a20cc75b0c1d01e375a7a04f2f60f0cc91a9681cd99b3a6d287",
+  "pins" : [
+    {
+      "identity" : "calculatorapi",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/sanazbahmankhahios/CalculatorAPI.git",
+      "state" : {
+        "revision" : "2ee664d12f931de272c6bc23922999547a6ded92",
+        "version" : "1.0.0"
+      }
+    }
+  ],
+  "version" : 3
+}
