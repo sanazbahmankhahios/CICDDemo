@@ -1,5 +1,8 @@
 pipeline {
     agent any
+    environment {
+        SWIFTLINT_PATH = '/opt/homebrew/bin/swiftlint'
+    }
 
     stages {
         stage('Checkout') {
