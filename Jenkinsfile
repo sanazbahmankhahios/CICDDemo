@@ -2,29 +2,22 @@ pipeline {
     agent any
 
     stages {
-        //  Checkout the repository
         stage('Checkout') {
             steps {
                 git url: 'https://github.com/sanazbahmankhahios/CICDDemo.git'
             }
         }
 
-        //  Lint stage using Mint-installed SwiftLint
         stage('Lint') {
             steps {
                 sh '''
-                    if [ -x "./mint/bin/swiftlint" ]; then
-                        echo "Running SwiftLint..."
-                        ./mint/bin/swiftlint lint --strict --reporter xcode
-                    else
-                        echo "SwiftLint not found, failing pipeline"
-                        exit 1
-                    fi
+                    set -e
+                    echo "Running SwiftLint..."
+                    mint run realm/SwiftLint@0.61.0 lint --strict --config .swiftlint-ci.yml --reporter xcode
                 '''
             }
         }
 
-        //  Build stage
         stage('Build') {
             steps {
                 sh '''
@@ -38,7 +31,6 @@ pipeline {
             }
         }
 
-        //  Test stage
         stage('Test') {
             steps {
                 sh '''
