@@ -1,3 +1,4 @@
+# .swiftlint-ci.yml (violent)
 opt_in_rules:
   - all
 
